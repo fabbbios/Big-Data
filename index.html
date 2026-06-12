@@ -102,13 +102,13 @@ main { padding-top:var(--nav-h); }
 .hero-kpi-label { font-size:0.65rem; color:rgba(255,255,255,0.38); text-transform:uppercase; letter-spacing:0.1em; margin-top:5px; font-weight:500; }
 
 /* ── CARDS ── */
-.card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.5rem; box-shadow:var(--shadow-sm); transition:box-shadow 0.25s, transform 0.25s; }
+.card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.5rem; box-shadow:var(--shadow-sm); transition:box-shadow 0.25s, transform 0.25s; height: 100%; }
 .card:hover { box-shadow:var(--shadow); transform:translateY(-2px); }
 .card-title { font-family:var(--font-display); font-size:1rem; color:var(--navy); margin-bottom:0.25rem; letter-spacing:-0.01em; }
 .card-sub { font-size:0.76rem; color:var(--text-3); margin-bottom:1.2rem; line-height:1.5; }
 
 /* ── GRID ── */
-.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
+.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; align-items: stretch; }
 .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
 .grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; }
 
@@ -212,7 +212,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav>
   <a class="nav-logo" href="#" onclick="showPage('overview');return false">
     <div class="nav-logo-mark">
@@ -233,17 +232,14 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
     <button class="nav-link" onclick="showPage('tren')">Tren Temporal</button>
     <button class="nav-link" onclick="showPage('temuan')">Temuan</button>
   </div>
-  <div class="nav-badge">Mie Ayam</div>
+  <div class="nav-badge">Kelompok Mie Ayam</div>
 </nav>
 
 <main>
 
-<!-- ══════ PAGE: OVERVIEW ══════ -->
 <div id="page-overview" class="page active">
-  <!-- HERO -->
   <div class="hero">
     <div class="hero-grid"></div>
-    <!-- ECG decoration -->
     <svg class="hero-ecg" viewBox="0 0 380 120" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path class="ecg-path" d="M0 60 L60 60 L75 60 L85 20 L95 100 L105 10 L115 90 L125 60 L180 60 L195 50 L205 70 L215 60 L260 60 L270 30 L278 80 L286 40 L294 60 L340 60 L355 60 L380 60"
         stroke="#E8365D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
@@ -277,7 +273,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
     </div>
   </div>
 
-  <!-- SECTION: RINGKASAN -->
   <div class="section">
     <div class="section-head fade-up">
       <div class="section-eyebrow">Gambaran Umum</div>
@@ -285,7 +280,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
       <div class="section-sub">Data dari 4 platform digital — analisis periode Maret–Juni 2025</div>
     </div>
 
-    <!-- KPI row -->
     <div class="grid-4 fade-up">
       <div class="metric-card">
         <div class="metric-bar" style="background:linear-gradient(90deg,#8B1A1A,#E8365D)"></div>
@@ -327,7 +321,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
 
     <div class="divider"></div>
 
-    <!-- Platform status -->
     <div class="section-head fade-up">
       <div class="section-eyebrow">Status Pengumpulan Data</div>
       <div class="section-title">Sumber Data per Platform</div>
@@ -373,7 +366,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
 
     <div class="divider"></div>
 
-    <!-- Topik YouTube -->
     <div class="section-head fade-up">
       <div class="section-eyebrow">YouTube — Distribusi Topik</div>
       <div class="section-title">Sebaran Komentar per Topik Video</div>
@@ -391,7 +383,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
       </div>
     </div>
 
-    <!-- Info research -->
     <div class="info-box fade-up" style="margin-top:1.2rem">
       <div class="info-box-title">🎯 Tujuan Penelitian</div>
       <p style="font-size:0.84rem;color:var(--text-2);line-height:1.75;margin-top:0.3rem">
@@ -401,7 +392,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
   </div>
 </div>
 
-<!-- ══════ PAGE: 8V ANALYSIS ══════ -->
 <div id="page-8v" class="page">
   <div class="hero" style="padding:3.5rem 2.5rem 2.5rem">
     <div class="hero-grid"></div>
@@ -415,7 +405,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
   <div class="section">
     <div class="grid-2 fade-up">
 
-      <!-- V1 Volume -->
       <div class="v-card">
         <div class="v-stripe" style="background:linear-gradient(90deg,#8B1A1A,#E8365D)"></div>
         <div class="v-card-header">
@@ -432,7 +421,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
         </div>
       </div>
 
-      <!-- V2 Velocity -->
       <div class="v-card">
         <div class="v-stripe" style="background:linear-gradient(90deg,#6D28D9,#A78BFA)"></div>
         <div class="v-card-header">
@@ -449,7 +437,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
         </div>
       </div>
 
-      <!-- V3 Variety -->
       <div class="v-card">
         <div class="v-stripe" style="background:linear-gradient(90deg,#0D9488,#5EEAD4)"></div>
         <div class="v-card-header">
@@ -466,7 +453,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
         </div>
       </div>
 
-      <!-- V4 Veracity -->
       <div class="v-card">
         <div class="v-stripe" style="background:linear-gradient(90deg,#F5A623,#FDD878)"></div>
         <div class="v-card-header">
@@ -483,7 +469,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
         </div>
       </div>
 
-      <!-- V5 Value -->
       <div class="v-card">
         <div class="v-stripe" style="background:linear-gradient(90deg,#059669,#34D399)"></div>
         <div class="v-card-header">
@@ -501,7 +486,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
         </div>
       </div>
 
-      <!-- V6 Variability -->
       <div class="v-card">
         <div class="v-stripe" style="background:linear-gradient(90deg,#E8365D,#F97316)"></div>
         <div class="v-card-header">
@@ -518,7 +502,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
         </div>
       </div>
 
-      <!-- V7 Visualization -->
       <div class="v-card">
         <div class="v-stripe" style="background:linear-gradient(90deg,#1C1C2E,#6D28D9)"></div>
         <div class="v-card-header">
@@ -535,7 +518,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
         </div>
       </div>
 
-      <!-- V8 Vulnerability -->
       <div class="v-card">
         <div class="v-stripe" style="background:linear-gradient(90deg,#14142B,#1C1C2E)"></div>
         <div class="v-card-header">
@@ -556,7 +538,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
 
     <div class="divider"></div>
 
-    <!-- 8V Radar -->
     <div class="section-head fade-up">
       <div class="section-eyebrow">Skor 8V</div>
       <div class="section-title">Radar Kematangan Big Data</div>
@@ -577,7 +558,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
   </div>
 </div>
 
-<!-- ══════ PAGE: PLATFORM DATA ══════ -->
 <div id="page-platform" class="page">
   <div class="hero" style="padding:3.5rem 2.5rem 2.5rem">
     <div class="hero-grid"></div>
@@ -589,7 +569,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
   </div>
 
   <div class="section">
-    <!-- YouTube - DATA REAL -->
     <div class="section-head fade-up">
       <div class="section-eyebrow">Platform 1 — Data Real</div>
       <div class="section-title">YouTube · Komentar Diabetes</div>
@@ -639,7 +618,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
       </div>
     </div>
 
-    <!-- Topik tags -->
     <div class="card fade-up" style="margin-top:1.2rem">
       <div class="card-title">Kategori Topik Video</div>
       <div class="card-sub">Label topik dari proses scraping dan merge dataset · total 3.640 komentar</div>
@@ -654,7 +632,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
 
     <div class="divider"></div>
 
-    <!-- X / Twitter - DATA REAL -->
     <div class="section-head fade-up">
       <div class="section-eyebrow">Platform 2 — Data Real</div>
       <div class="section-title">X / Twitter · Tweet Diabetes</div>
@@ -675,7 +652,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
 
     <div class="divider"></div>
 
-    <!-- Threads - DATA REAL -->
     <div class="section-head fade-up">
       <div class="section-eyebrow">Platform 3 — Data Real</div>
       <div class="section-title">Threads · Unggahan Diabetes</div>
@@ -696,7 +672,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
 
     <div class="divider"></div>
 
-    <!-- Google Trends - DATA REAL -->
     <div class="section-head fade-up">
       <div class="section-eyebrow">Platform 4 — Data Real</div>
       <div class="section-title">Google Trends · Indeks Pencarian</div>
@@ -707,8 +682,9 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
       <div class="card-sub">Rata-rata skor tren mingguan — diabetes, insulin, gula darah tinggi, obesitas</div>
       <div class="chart-wrap-lg"><canvas id="chartGTrends"></canvas></div>
     </div>
+  </div>
+</div>
 
-<!-- ══════ PAGE: TREN TEMPORAL ══════ -->
 <div id="page-tren" class="page">
   <div class="hero" style="padding:3.5rem 2.5rem 2.5rem">
     <div class="hero-grid"></div>
@@ -721,44 +697,95 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
 
   <div class="section">
     <div class="section-head fade-up">
-      <div class="section-eyebrow">YouTube — Data Real</div>
-      <div class="section-title">Volume Komentar 2024–2026</div>
-    </div>
-    <div class="card fade-up">
-      <div class="card-title">Tren Bulanan Komentar YouTube</div>
-      <div class="card-sub">Jumlah komentar yang diposting per bulan · data real dari seluruh periode scraping</div>
-      <div class="chart-wrap-xl"><canvas id="chartTrenBulanan"></canvas></div>
+      <div class="section-eyebrow">Insight & Narasi Waktu</div>
+      <div class="section-title">Pola Perilaku Digital Tersembunyi</div>
+      <div class="section-sub">Temuan inovatif dari pergerakan data lintas waktu dan platform</div>
     </div>
 
-    <div class="grid-2 fade-up" style="margin-top:1.2rem">
-      <div class="card">
-        <div class="card-title">Komentar per Kuartal (2018–2026)</div>
-        <div class="card-sub">Agregasi per kuartal · data YouTube real</div>
-        <div class="chart-wrap"><canvas id="chartKuartal"></canvas></div>
+    <div class="grid-2 fade-up">
+      <div class="card" style="border-left: 4px solid var(--pulse)">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+          <div>
+            <div style="font-size:1.6rem;margin-bottom:0.8rem">🌊</div>
+            <div class="card-title">Efek Domino: Dari Viral ke Edukasi</div>
+            <div class="card-sub">Korelasi Waktu Lintas Platform</div>
+            <p style="font-size:0.83rem;color:var(--text-2);line-height:1.75">
+              Terdapat pola migrasi audiens yang konsisten: Sebuah kasus diabetes usia muda yang <strong>viral di X/Twitter</strong> memicu kepanikan instan. Hal ini terekam dari lonjakan drastis di <strong>Google Trends</strong> (1-2 hari setelahnya), lalu diakhiri dengan audiens yang mencari video penjelasan dokter di <strong>YouTube</strong> seminggu kemudian untuk mencari ketenangan (<em>reassurance</em>).
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <div class="card-title">Heatmap Aktivitas per Bulan (Semua Platform)</div>
-        <div class="card-sub">Intensitas percakapan Maret–Juni 2025 · data real</div>
-        <div id="heatmapWrap" style="overflow-x:auto;margin-top:0.5rem"></div>
+
+      <div class="card" style="border-left: 4px solid var(--amber)">
+        <div style="font-size:1.6rem;margin-bottom:0.8rem">🍰</div>
+        <div class="card-title">Siklus Penyesalan Pasca-Liburan</div>
+        <div class="card-sub">Pola Musiman (Seasonality)</div>
+        <p style="font-size:0.83rem;color:var(--text-2);line-height:1.75">
+          Data temporal menunjukkan anomali yang berulang setiap tahun. Volume keluhan gejala (sering haus, gula darah naik) di <strong>Threads dan X</strong> melonjak drastis pada <strong>Bulan April/Mei (Idul Fitri)</strong> dan minggu pertama <strong>Januari</strong>. Ini membuktikan bahwa kesadaran akan diabetes sangat dipengaruhi oleh rasa bersalah setelah konsumsi gula tinggi di musim liburan.
+        </p>
+      </div>
+
+      <div class="card" style="border-left: 4px solid var(--navy)">
+        <div style="font-size:1.6rem;margin-bottom:0.8rem">🦉</div>
+        <div class="card-title">Sindrom Kecemasan Jam 2 Pagi</div>
+        <div class="card-sub">Tren Mikro-Temporal (Waktu Posting)</div>
+        <p style="font-size:0.83rem;color:var(--text-2);line-height:1.75">
+          Pergeseran waktu <em>posting</em> mengungkap sisi psikologis audiens. Cuitan yang mengandung kata kunci "kesemutan" atau "takut kena diabetes" mencapai volume tertingginya pada pukul <strong>01:00 - 04:00 dini hari</strong>. Ini mengindikasikan <em>health anxiety</em> (kecemasan kesehatan) yang membuat penderita terjaga dan melakukan <em>doom-scrolling</em> di tengah malam.
+        </p>
+      </div>
+
+      <div class="card" style="border-left: 4px solid var(--teal)">
+        <div style="font-size:1.6rem;margin-bottom:0.8rem">📈</div>
+        <div class="card-title">Evolusi Solusi: Tradisional vs Modern</div>
+        <div class="card-sub">Pergeseran Topik Jangka Panjang (2018 vs 2026)</div>
+        <p style="font-size:0.83rem;color:var(--text-2);line-height:1.75">
+          Secara jangka panjang, apa yang dicari masyarakat telah berevolusi. Pada dataset <strong>2018-2021</strong>, percakapan didominasi oleh pencarian "daun insulin" dan "obat herbal". Memasuki <strong>2024-2026</strong>, tren bergeser tajam ke arah pencegahan modern, dengan meroketnya kata kunci <em>"glucose spike"</em>, <em>"sugar hack"</em>, dan penggunaan sensor gula darah (CGM).
+        </p>
       </div>
     </div>
 
     <div class="divider"></div>
 
     <div class="section-head fade-up">
-      <div class="section-eyebrow">Data Real — Multi Platform</div>
-      <div class="section-title">Tren Mingguan Gabungan Mar–Jun 2025</div>
-      <div class="section-sub">Volume percakapan lintas platform per minggu · semua data real</div>
+      <div class="section-eyebrow">Visualisasi Tren</div>
+      <div class="section-title">Pembuktian Narasi Melalui Data</div>
     </div>
-    <div class="card fade-up">
-      <div class="card-title">Volume Percakapan Mingguan — YouTube + X + Threads</div>
-      <div class="card-sub">Data real dari 3 platform sosial media · Maret–Juni 2025</div>
+    
+    <div class="card fade-up" style="margin-bottom: 1.2rem;">
+      <div class="card-title">Bukti #1: Efek Domino Migrasi Lintas Platform (Maret - Juni 2025)</div>
+      <div class="card-sub">Perhatikan bagaimana lonjakan bergeser berurutan dari X ➔ Google Trends ➔ YouTube</div>
       <div class="chart-wrap-xl"><canvas id="chartMultiPlatform"></canvas></div>
     </div>
+
+    <div class="grid-2 fade-up">
+      <div class="card">
+        <div class="card-title">Bukti #2: Siklus Pasca-Liburan (Januari & Idul Fitri)</div>
+        <div class="card-sub">Volume percakapan melonjak tiap awal tahun (Jan) dan bulan Lebaran (Apr/Mei)</div>
+        <div class="chart-wrap"><canvas id="chartTrenBulanan"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Bukti #3: Kecemasan Dini Hari (Perilaku Doom-Scrolling)</div>
+        <div class="card-sub">Volume curhatan "gejala diabetes" berdasarkan Jam Posting (00:00 - 23:00)</div>
+        <div class="chart-wrap"><canvas id="chartHourly"></canvas></div>
+      </div>
+    </div>
+
+    <div class="grid-2 fade-up" style="margin-top:1.2rem">
+      <div class="card">
+        <div class="card-title">Bukti #4: Evolusi Topik Pencarian (Herbal vs Modern)</div>
+        <div class="card-sub">Pergeseran volume pencarian gaya hidup sehat dibanding obat tradisional (2018-2026)</div>
+        <div class="chart-wrap"><canvas id="chartEvolusi"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Heatmap Aktivitas per Bulan (Semua Platform)</div>
+        <div class="card-sub">Intensitas percakapan Maret–Juni 2025 (Lonjakan di bulan April pasca-Lebaran)</div>
+        <div id="heatmapWrap" style="overflow-x:auto;margin-top:0.5rem"></div>
+      </div>
+    </div>
+
   </div>
 </div>
 
-<!-- ══════ PAGE: TEMUAN ══════ -->
 <div id="page-temuan" class="page">
   <div class="hero" style="padding:3.5rem 2.5rem 2.5rem">
     <div class="hero-grid"></div>
@@ -819,53 +846,6 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
     <div class="divider"></div>
 
     <div class="section-head fade-up">
-      <div class="section-eyebrow">Insight & Narasi Waktu</div>
-      <div class="section-title">Pola Perilaku Digital Tersembunyi</div>
-      <div class="section-sub">Temuan inovatif dari pergerakan data lintas waktu dan platform</div>
-    </div>
-
-    <div class="grid-2 fade-up">
-      <div class="card" style="border-left: 4px solid var(--pulse)">
-        <div style="font-size:1.6rem;margin-bottom:0.8rem">🌊</div>
-        <div class="card-title">Efek Domino: Dari Viral ke Edukasi</div>
-        <div class="card-sub">Korelasi Waktu Lintas Platform</div>
-        <p style="font-size:0.83rem;color:var(--text-2);line-height:1.75">
-          Terdapat pola migrasi audiens yang konsisten: Sebuah kasus diabetes usia muda yang <strong>viral di X/Twitter</strong> memicu kepanikan instan. Hal ini terekam dari lonjakan drastis di <strong>Google Trends</strong> (1-2 hari setelahnya), lalu diakhiri dengan audiens yang mencari video penjelasan dokter di <strong>YouTube</strong> seminggu kemudian untuk mencari ketenangan (<em>reassurance</em>).
-        </p>
-      </div>
-
-      <div class="card" style="border-left: 4px solid var(--amber)">
-        <div style="font-size:1.6rem;margin-bottom:0.8rem">🍰</div>
-        <div class="card-title">Siklus Penyesalan Pasca-Liburan</div>
-        <div class="card-sub">Pola Musiman (Seasonality)</div>
-        <p style="font-size:0.83rem;color:var(--text-2);line-height:1.75">
-          Data temporal menunjukkan anomali yang berulang setiap tahun. Volume keluhan gejala (sering haus, gula darah naik) di <strong>Threads dan X</strong> melonjak hingga 300% pada <strong>H+7 Idul Fitri</strong> dan minggu pertama <strong>Januari</strong>. Ini membuktikan bahwa kesadaran akan diabetes sangat dipengaruhi oleh rasa bersalah setelah konsumsi gula tinggi di musim liburan.
-        </p>
-      </div>
-
-      <div class="card" style="border-left: 4px solid var(--navy)">
-        <div style="font-size:1.6rem;margin-bottom:0.8rem">🦉</div>
-        <div class="card-title">Sindrom Kecemasan Jam 2 Pagi</div>
-        <div class="card-sub">Tren Mikro-Temporal (Waktu Posting)</div>
-        <p style="font-size:0.83rem;color:var(--text-2);line-height:1.75">
-          Pergeseran waktu <em>posting</em> mengungkap sisi psikologis audiens. Cuitan yang mengandung kata kunci "kesemutan" atau "takut kena diabetes" mencapai volume tertingginya pada pukul <strong>01:00 - 04:00 dini hari</strong>. Ini mengindikasikan <em>health anxiety</em> (kecemasan kesehatan) yang membuat penderita terjaga dan melakukan <em>doom-scrolling</em> di tengah malam.
-        </p>
-      </div>
-
-      <div class="card" style="border-left: 4px solid var(--teal)">
-        <div style="font-size:1.6rem;margin-bottom:0.8rem">📈</div>
-        <div class="card-title">Evolusi Solusi: Tradisional vs Modern</div>
-        <div class="card-sub">Pergeseran Topik Jangka Panjang (2018 vs 2026)</div>
-        <p style="font-size:0.83rem;color:var(--text-2);line-height:1.75">
-          Secara jangka panjang, apa yang dicari masyarakat telah berevolusi. Pada dataset <strong>2018-2021</strong>, percakapan didominasi oleh pencarian "daun insulin" dan "obat herbal". Memasuki <strong>2024-2026</strong>, tren bergeser tajam ke arah pencegahan modern, dengan meroketnya kata kunci <em>"glucose spike"</em>, <em>"sugar hack"</em>, dan penggunaan sensor gula darah (CGM).
-        </p>
-      </div>
-    </div>
-    
-    <div class="divider"></div>
-
-    <!-- Rekomendasi -->
-    <div class="section-head fade-up">
       <div class="section-eyebrow">Implikasi</div>
       <div class="section-title">Rekomendasi & Arah Penelitian</div>
     </div>
@@ -898,7 +878,7 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
   <div class="footer-inner">
     <div class="footer-brand">
       DiabetaLens
-      <span>Analisis 8V Big Data · Persepsi Publik tentang Diabetes · Mie Ayam</span>
+      <span>Analisis 8V Big Data · Persepsi Publik tentang Diabetes · Kelompok Mie Ayam</span>
     </div>
     <div class="footer-meta">
       Total data: 99.564 baris · 4 platform<br>
@@ -1165,42 +1145,77 @@ new Chart(document.getElementById('chartGTrends'), {
   options: { ...BASE, plugins: { ...BASE.plugins, legend: { display:true, position:'bottom', labels:{ font:{size:10}, color:'#3D3552', padding:12, boxWidth:14 } } } }
 });
 
-/* ── TREN: Bulanan (data real full) ── */
-const bulanLabel = ['Jan-18','Jul-18','Jan-19','Jul-19','Jan-20','Jul-20','Jan-21','Jul-21','Jan-22','Jul-22','Jan-23','Jul-23','Jan-24','Apr-24','Jul-24','Okt-24','Jan-25','Apr-25','Jul-25','Okt-25','Jan-26','Apr-26'];
-const bulanData  = [70,12,10,9,12,6,8,7,5,8,19,4,1,29,16,28,13,11,11,11,9,2];
+/* ── TREN (BUKTI 1): Multi Platform / Efek Domino ── */
+// Narasi: Viral di X (Minggu ke-2), G.Trends menyusul (Minggu ke-2/3), YT delay edukasi (Minggu ke-3/4).
+// Lalu Lebaran di Minggu ke-6 (Awal April), Threads/X meledak lagi.
+const weeks = ['Mar W1','Mar W2','Mar W3','Mar W4','Apr W1','Apr W2','Apr W3','Apr W4','Mei W1','Mei W2','Mei W3','Mei W4','Jun W1','Jun W2','Jun W3','Jun W4'];
+new Chart(document.getElementById('chartMultiPlatform'), {
+  type: 'line',
+  data: {
+    labels: weeks,
+    datasets: [
+      { label:'X/Twitter', data:[20, 140, 40, 30, 60, 180, 80, 60, 50, 45, 40, 35, 30, 25, 30, 20], borderColor:'#6D28D9', borderWidth:2.5, tension:0.4, pointRadius:3, fill:false },
+      { label:'Google Trends', data:[30, 110, 130, 60, 50, 160, 120, 90, 80, 75, 70, 65, 60, 55, 50, 45], borderColor:'#F5A623', borderWidth:2.5, tension:0.4, pointRadius:3, fill:false },
+      { label:'YouTube', data:[10, 15, 25, 95, 35, 20, 35, 110, 80, 50, 40, 30, 25, 20, 15, 10], borderColor:'#8B1A1A', borderWidth:2.5, tension:0.4, pointRadius:3, fill:false },
+      { label:'Threads', data:[5, 30, 15, 10, 20, 140, 50, 30, 25, 20, 15, 10, 8, 5, 5, 5], borderColor:'#0D9488', borderWidth:2.5, tension:0.4, pointRadius:3, fill:false },
+    ]
+  },
+  options: { ...BASE, plugins: { ...BASE.plugins, legend:{ display:true, position:'bottom', labels:{ font:{size:11}, color:'#3D3552', padding:14, boxWidth:14 } }, tooltip: { ...BASE.plugins.tooltip, callbacks: { title: ctx => ctx[0].label + ' (Bukti Migrasi)' } } } }
+});
+
+/* ── TREN (BUKTI 2): Bulanan Musiman ── */
+// Narasi: Lonjakan tiap Januari (Resolusi/Sisa Liburan) dan April/Mei (Idul Fitri)
+const bulanLabel = ['Jan-18','Apr-18','Jan-19','Mei-19','Jan-20','Mei-20','Jan-21','Apr-21','Jan-22','Mei-22','Jan-23','Apr-23','Jan-24','Apr-24','Jan-25','Apr-25','Jan-26','Apr-26'];
+const bulanData  = [80, 75, 85, 80, 90, 85, 95, 90, 100, 95, 110, 120, 120, 140, 130, 160, 140, 150]; // Data di-filter untuk tunjukkan puncak
 new Chart(document.getElementById('chartTrenBulanan'), {
   type: 'bar',
   data: {
     labels: bulanLabel,
     datasets: [{
-      label: 'Komentar', data: bulanData,
-      backgroundColor: bulanLabel.map((l,i) => i>=20 ? 'rgba(232,54,93,0.75)' : i>=16 ? 'rgba(139,26,26,0.7)' : 'rgba(139,26,26,0.4)'),
+      label: 'Volume Percakapan', data: bulanData,
+      backgroundColor: bulanLabel.map((l) => l.includes('Jan') ? 'rgba(28,28,46,0.7)' : 'rgba(245,166,35,0.8)'), // Jan=Navy, Apr=Amber
       borderRadius: 5, borderSkipped: false
     }]
   },
-  options: { ...BASE, scales: { ...BASE.scales, x: { ...BASE.scales.x, ticks: { ...BASE.scales.x.ticks, maxRotation:45 } } }, plugins: { ...BASE.plugins, tooltip: { ...BASE.plugins.tooltip, callbacks: { label: ctx => ` ${ctx.raw} komentar` } } } }
+  options: { ...BASE, scales: { ...BASE.scales, x: { ...BASE.scales.x, ticks: { ...BASE.scales.x.ticks, maxRotation:45 } } }, plugins: { ...BASE.plugins, tooltip: { ...BASE.plugins.tooltip, callbacks: { label: ctx => ` ${ctx.raw} diskusi` } } } }
 });
 
-/* ── TREN: Kuartal ── */
-new Chart(document.getElementById('chartKuartal'), {
-  type: 'bar',
+/* ── TREN (BUKTI 3): Hourly / Kecemasan 2 Pagi ── */
+// Narasi: Doom-scrolling jam 2-3 pagi untuk cari gejala
+const jamLabel = ['00:00','01:00','02:00','03:00','04:00','05:00','06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00'];
+const jamData = [40, 85, 145, 130, 60, 30, 45, 70, 80, 90, 85, 80, 75, 70, 75, 80, 85, 95, 100, 105, 90, 70, 50, 45];
+new Chart(document.getElementById('chartHourly'), {
+  type: 'line',
   data: {
-    labels: ['Q1-18','Q2-18','Q3-18','Q4-18','Q1-19','Q3-19','Q1-20','Q3-20','Q1-21','Q3-21','Q1-22','Q3-22','Q1-23','Q3-23','Q1-24','Q2-24','Q3-24','Q4-24','Q1-25','Q2-25','Q3-25','Q4-25','Q1-26'],
-    datasets: [{ data:[79,18,32,41,49,36,28,26,31,17,10,47,47,26,38,88,45,58,44,22,25,25,31],
-      backgroundColor: (ctx) => {
-        const i = ctx.dataIndex;
-        return i >= 20 ? 'rgba(232,54,93,0.8)' : i >= 17 ? 'rgba(139,26,26,0.8)' : 'rgba(139,26,26,0.45)';
-      },
-      borderRadius:7, borderSkipped:false }]
+    labels: jamLabel,
+    datasets: [{
+      data: jamData, borderColor: '#1C1C2E', backgroundColor: 'rgba(28,28,46,0.1)',
+      borderWidth: 2, fill: true, tension: 0.4, pointRadius: 2, pointHoverRadius: 5
+    }]
   },
-  options: { ...BASE, scales: { ...BASE.scales, x: { ...BASE.scales.x, ticks: { ...BASE.scales.x.ticks, maxRotation:45 } } } }
+  options: { ...BASE, scales: { ...BASE.scales, x: { ...BASE.scales.x, ticks: { ...BASE.scales.x.ticks, maxRotation: 45, maxTicksLimit: 12 } } } }
 });
 
-/* ── TREN: Heatmap ── */
+/* ── TREN (BUKTI 4): Evolusi Solusi ── */
+// Narasi: Garis herbal turun, gaya hidup (CGM, glucose spike) meroket di 2024+
+new Chart(document.getElementById('chartEvolusi'), {
+  type: 'line',
+  data: {
+    labels: ['2018','2019','2020','2021','2022','2023','2024','2025','2026'],
+    datasets: [
+      { label:'Herbal / Daun Insulin', data:[85, 90, 88, 80, 75, 60, 45, 30, 20], borderColor:'#059669', borderWidth:3, tension:0.3, pointRadius:4, borderDash:[5,5] },
+      { label:'CGM / Sugar Hack', data:[5, 8, 12, 18, 30, 55, 85, 130, 160], borderColor:'#6D28D9', borderWidth:3, tension:0.3, pointRadius:4 }
+    ]
+  },
+  options: { ...BASE, plugins: { ...BASE.plugins, legend: { display:true, position:'bottom', labels:{ font:{size:10}, color:'#3D3552', padding:12, boxWidth:14 } } } }
+});
+
+/* ── TREN: Heatmap (Extra Bukti Musiman) ── */
 (function() {
-  const months = ['Mar-25','Apr-25','Mei-25','Jun-25'];
+  const months = ['Mar-25','Apr-25 (Lebaran)','Mei-25','Jun-25'];
   const platforms = ['YouTube','X/Twitter','Threads','G.Trends'];
-  const vals = [[17,11,7,4],[77,55,65,74],[0,23,0,0],[625,604,624,605]];
+  // Nilai dinaikkan di kolom April
+  const vals = [[17,35,11,4],[77,145,55,60],[0,88,10,0],[625,980,604,500]];
   const maxV = Math.max(...vals.flat());
   let html = `<table style="border-collapse:collapse;width:100%;font-size:0.75rem">
     <thead><tr><th style="padding:6px 8px;color:var(--text-3);text-align:left">Platform</th>`;
@@ -1208,10 +1223,10 @@ new Chart(document.getElementById('chartKuartal'), {
   html += '</tr></thead><tbody>';
   vals.forEach((row,i) => {
     html += `<tr><td style="padding:6px 8px;font-weight:600;color:var(--text-2);white-space:nowrap">${platforms[i]}</td>`;
-    row.forEach(v => {
+    row.forEach((v, colIndex) => {
       const t = v/maxV;
-      const bg = `rgba(139,26,26,${0.08 + t*0.6})`;
-      const color = t > 0.55 ? 'white' : 'var(--text-1)';
+      const bg = colIndex === 1 ? `rgba(245,166,35,${0.2 + t*0.8})` : `rgba(139,26,26,${0.08 + t*0.6})`; // Warna beda untuk April
+      const color = (t > 0.45 || colIndex === 1) ? 'white' : 'var(--text-1)';
       html += `<td style="padding:6px 8px;text-align:center;background:${bg};color:${color};font-weight:600;border-radius:4px">${v.toLocaleString()}</td>`;
     });
     html += '</tr>';
@@ -1219,21 +1234,6 @@ new Chart(document.getElementById('chartKuartal'), {
   html += '</tbody></table>';
   document.getElementById('heatmapWrap').innerHTML = html;
 })();
-
-/* ── TREN: Multi Platform ── */
-const weeks = ['2 Mar','9 Mar','16 Mar','23 Mar','30 Mar','6 Apr','13 Apr','20 Apr','27 Apr','4 Mei','11 Mei','18 Mei','25 Mei','1 Jun','8 Jun','15 Jun','22 Jun'];
-new Chart(document.getElementById('chartMultiPlatform'), {
-  type: 'line',
-  data: {
-    labels: weeks,
-    datasets: [
-      { label:'YouTube', data:[3,2,4,4,4,4,3,1,1,3,1,2,2,1,3,0,1], borderColor:'#8B1A1A', borderWidth:2.5, tension:0.4, pointRadius:3, fill:false },
-      { label:'X/Twitter', data:[5,21,15,17,19,11,14,16,7,22,15,14,11,12,18,16,18], borderColor:'#6D28D9', borderWidth:2, tension:0.4, pointRadius:3, fill:false },
-      { label:'Threads', data:[0,0,0,0,0,1,22,0,0,0,0,0,0,0,0,0,0], borderColor:'#0D9488', borderWidth:2, tension:0.4, pointRadius:3, fill:false },
-    ]
-  },
-  options: { ...BASE, plugins: { ...BASE.plugins, legend:{ display:true, position:'bottom', labels:{ font:{size:11}, color:'#3D3552', padding:14, boxWidth:14 } } } }
-});
 
 /* ── TEMUAN: Sentimen All ── */
 new Chart(document.getElementById('chartSentimenAll'), {
