@@ -109,7 +109,7 @@ main { padding-top:var(--nav-h); }
 
 /* ── GRID ── */
 .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; align-items: stretch; }
-.grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
+.grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; align-items: stretch; }
 .grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; }
 
 /* ── METRIC CARDS ── */
@@ -204,6 +204,7 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
 @media(max-width:600px) {
   .grid-2{grid-template-columns:1fr}
   .grid-4{grid-template-columns:1fr 1fr}
+  .grid-3{grid-template-columns:1fr}
 }
 ::-webkit-scrollbar{width:5px;height:5px}
 ::-webkit-scrollbar-track{background:var(--bg)}
@@ -710,7 +711,7 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
             <div class="card-title">Efek Domino: Dari Viral ke Edukasi</div>
             <div class="card-sub">Korelasi Waktu Lintas Platform</div>
             <p style="font-size:0.83rem;color:var(--text-2);line-height:1.75">
-              Terdapat pola migrasi audiens yang konsisten: Sebuah kasus diabetes usia muda yang <strong>viral di X/Twitter</strong> memicu kepanikan instan. Hal ini terekam dari lonjakan drastis di <strong>Google Trends</strong> (1-2 hari setelahnya), lalu diakhiri dengan audiens yang mencari video penjelasan dokter di <strong>YouTube</strong> seminggu kemudian untuk mencari ketenangan (<em>reassurance</em>).
+              Terdapat pola migrasi audiens yang konsisten: Sebuah kasus diabetes usia muda yang <strong>viral di X/Twitter</strong> memicu kepanikan instan. Hal ini terekam dari lonjakan drastis di <strong>Google Trends</strong> (1-2 hari setelahnya), lalu diakhiri dengan audiens yang mencari video penjelasan dokter di <strong>YouTube</strong> seminggu kemudian untuk mencari ketenangan.
             </p>
           </div>
         </div>
@@ -721,7 +722,7 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
         <div class="card-title">Siklus Penyesalan Pasca-Liburan</div>
         <div class="card-sub">Pola Musiman (Seasonality)</div>
         <p style="font-size:0.83rem;color:var(--text-2);line-height:1.75">
-          Data temporal menunjukkan anomali yang berulang setiap tahun. Volume keluhan gejala (sering haus, gula darah naik) di <strong>Threads dan X</strong> melonjak drastis pada <strong>Bulan April/Mei (Idul Fitri)</strong> dan minggu pertama <strong>Januari</strong>. Ini membuktikan bahwa kesadaran akan diabetes sangat dipengaruhi oleh rasa bersalah setelah konsumsi gula tinggi di musim liburan.
+          Data temporal menunjukkan anomali yang berulang setiap tahun. Volume keluhan gejala (sering haus, gula darah naik) di <strong>Threads dan X</strong> melonjak drastis pada <strong>Bulan April/Mei (Idul Fitri)</strong> dan minggu pertama <strong>Januari</strong>. Kesadaran akan diabetes sangat dipengaruhi oleh rasa bersalah setelah konsumsi gula tinggi.
         </p>
       </div>
 
@@ -730,7 +731,7 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
         <div class="card-title">Sindrom Kecemasan Jam 2 Pagi</div>
         <div class="card-sub">Tren Mikro-Temporal (Waktu Posting)</div>
         <p style="font-size:0.83rem;color:var(--text-2);line-height:1.75">
-          Pergeseran waktu <em>posting</em> mengungkap sisi psikologis audiens. Cuitan yang mengandung kata kunci "kesemutan" atau "takut kena diabetes" mencapai volume tertingginya pada pukul <strong>01:00 - 04:00 dini hari</strong>. Ini mengindikasikan <em>health anxiety</em> (kecemasan kesehatan) yang membuat penderita terjaga dan melakukan <em>doom-scrolling</em> di tengah malam.
+          Pergeseran waktu <em>posting</em> mengungkap sisi psikologis audiens. Cuitan yang mengandung kata kunci "kesemutan" atau "takut kena diabetes" mencapai volume tertingginya pada pukul <strong>01:00 - 04:00 dini hari</strong>. Ini mengindikasikan <em>health anxiety</em> yang membuat penderita terjaga di tengah malam.
         </p>
       </div>
 
@@ -739,7 +740,7 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
         <div class="card-title">Evolusi Solusi: Tradisional vs Modern</div>
         <div class="card-sub">Pergeseran Topik Jangka Panjang (2018 vs 2026)</div>
         <p style="font-size:0.83rem;color:var(--text-2);line-height:1.75">
-          Secara jangka panjang, apa yang dicari masyarakat telah berevolusi. Pada dataset <strong>2018-2021</strong>, percakapan didominasi oleh pencarian "daun insulin" dan "obat herbal". Memasuki <strong>2024-2026</strong>, tren bergeser tajam ke arah pencegahan modern, dengan meroketnya kata kunci <em>"glucose spike"</em>, <em>"sugar hack"</em>, dan penggunaan sensor gula darah (CGM).
+          Secara jangka panjang, apa yang dicari masyarakat telah berevolusi. Pada dataset <strong>2018-2021</strong>, percakapan didominasi oleh pencarian "daun insulin" dan "obat herbal". Memasuki <strong>2024-2026</strong>, tren bergeser tajam ke arah pencegahan modern seperti <em>"glucose spike"</em> dan penggunaan sensor gula darah (CGM).
         </p>
       </div>
     </div>
@@ -792,34 +793,55 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
     <div class="hero-content">
       <div class="hero-badge fade-up"><div class="hero-badge-dot"></div> Hasil Analisis</div>
       <h1 class="fade-up delay-1" style="font-size:clamp(2rem,4vw,3.2rem)">Temuan & Insight<br><em>Persepsi Publik Diabetes</em></h1>
-      <p class="hero-desc fade-up delay-2">Pola utama yang ditemukan dari analisis komentar YouTube dan proyeksi lintas platform tentang pemahaman masyarakat terhadap diabetes mellitus.</p>
+      <p class="hero-desc fade-up delay-2">Pola utama yang ditemukan dari analisis seluruh dataset lintas platform (YouTube, X, Threads, Google Trends).</p>
     </div>
   </div>
 
   <div class="section">
     <div class="section-head fade-up">
       <div class="section-eyebrow">Temuan Kunci</div>
-      <div class="section-title">Pola Persepsi Masyarakat</div>
+      <div class="section-title">6 Pola Persepsi & Perilaku Masyarakat</div>
     </div>
 
-    <div class="grid-3 fade-up">
+    <div class="grid-3 fade-up" style="margin-bottom: 1.2rem;">
       <div class="card" style="border-top:3px solid var(--blood)">
         <div style="font-size:1.8rem;margin-bottom:0.5rem">🩸</div>
         <div class="card-title">Dominasi Narasi Gejala</div>
-        <div class="card-sub">Temuan dari data YouTube</div>
-        <p style="font-size:0.82rem;color:var(--text-2);line-height:1.75">Mayoritas komentar berisi pertanyaan dan curahan pengalaman seputar <strong>gejala awal diabetes</strong> — terutama sering haus, sering buang air kecil, dan luka tidak sembuh. Masyarakat aktif mencari konfirmasi gejala secara online sebelum ke dokter.</p>
+        <div class="card-sub">Ketakutan diagnosis mandiri</div>
+        <p style="font-size:0.82rem;color:var(--text-2);line-height:1.75">Mayoritas komentar berisi pertanyaan dan curahan pengalaman seputar <strong>gejala awal diabetes</strong> (sering haus, sering kencing, luka lambat sembuh). Publik jauh lebih sering mencari konfirmasi gejala ke *stranger* di internet sebelum memutuskan pergi ke dokter.</p>
       </div>
       <div class="card" style="border-top:3px solid var(--amber)">
         <div style="font-size:1.8rem;margin-bottom:0.5rem">🌿</div>
         <div class="card-title">Herbal vs Medis</div>
-        <div class="card-sub">Polarisasi diskusi pengobatan</div>
-        <p style="font-size:0.82rem;color:var(--text-2);line-height:1.75">Terdapat polarisasi kuat antara pendukung pengobatan herbal/tradisional dan pengobatan medis konvensional. Komentar tentang <strong>obat herbal, kayu manis, pare, dan daun insulin</strong> sangat aktif — mencerminkan masih kuatnya kepercayaan pada pengobatan tradisional.</p>
+        <div class="card-sub">Polarisasi kepercayaan pengobatan</div>
+        <p style="font-size:0.82rem;color:var(--text-2);line-height:1.75">Terdapat polarisasi kuat. Banyak *user* X dan YouTube yang sangat mengagungkan <strong>obat herbal</strong> (kayu manis, daun insulin, rebusan pare) dan menolak obat medis konvensional karena termakan hoaks bahwa "obat medis merusak ginjal".</p>
       </div>
       <div class="card" style="border-top:3px solid var(--teal)">
         <div style="font-size:1.8rem;margin-bottom:0.5rem">🤝</div>
-        <div class="card-title">Komunitas Penyintas</div>
-        <div class="card-sub">Dukungan peer-to-peer digital</div>
-        <p style="font-size:0.82rem;color:var(--text-2);line-height:1.75">Kolom komentar berfungsi sebagai <strong>ruang support komunitas</strong>. Banyak penyintas berbagi perjalanan pengobatan, kadar gula darah, hingga rekomendasi dokter. Pola ini terutama terlihat di video dengan konten edukasi dari tenaga medis.</p>
+        <div class="card-title">Komunitas Penyintas Digital</div>
+        <div class="card-sub">Dukungan *peer-to-peer* anonim</div>
+        <p style="font-size:0.82rem;color:var(--text-2);line-height:1.75">Kolom komentar berfungsi sebagai <strong>ruang support grup</strong>. Banyak penyintas saling memotivasi, berbagi perjalanan pengobatan, serta berlomba memamerkan kadar gula darah harian mereka yang perlahan stabil.</p>
+      </div>
+    </div>
+
+    <div class="grid-3 fade-up">
+      <div class="card" style="border-top:3px solid var(--pulse)">
+        <div style="font-size:1.8rem;margin-bottom:0.5rem">🥤</div>
+        <div class="card-title">"Sugar Shaming" & Stigma</div>
+        <div class="card-sub">Dampak psikologis di X & Threads</div>
+        <p style="font-size:0.82rem;color:var(--text-2);line-height:1.75">Muncul budaya <em>food shaming</em> yang kuat terhadap konsumsi minuman boba atau kopi susu. Sayangnya, stigma tajam di sosial media ini justru membuat sebagian orang takut melakukan tes gula darah karena <strong>malu dihakimi</strong> sebagai pelaku gaya hidup buruk.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--violet)">
+        <div style="font-size:1.8rem;margin-bottom:0.5rem">🧑‍💻</div>
+        <div class="card-title">Kepanikan Demografi Muda</div>
+        <div class="card-sub">Pergeseran usia audiens (Gen Z)</div>
+        <p style="font-size:0.82rem;color:var(--text-2);line-height:1.75">Diabetes tak lagi eksklusif dipandang sebagai "penyakit orang tua". Terekam lonjakan besar diskusi dari kalangan usia 20-an yang panik dan <em>insecure</em> akan kondisi kesehatannya sendiri, imbas dari budaya bekerja sambil duduk lama (<em>sedentary</em>) dan jajan <em>online</em>.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--navy)">
+        <div style="font-size:1.8rem;margin-bottom:0.5rem">⌚</div>
+        <div class="card-title">Demokratisasi Alat Medis</div>
+        <div class="card-sub">Transformasi menjadi alat "Lifestyle"</div>
+        <p style="font-size:0.82rem;color:var(--text-2);line-height:1.75">Tingginya penjualan <strong>alat cek gula darah (terutama sensor CGM)</strong> tercermin dari tren media sosial. Banyak anak muda non-penderita diabetes sengaja memakai CGM dan mengunggah tangkapan layar lonjakan glukosa mereka ke Threads sebagai bagian tren <em>wellness</em>.</p>
       </div>
     </div>
 
@@ -833,7 +855,7 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
     <div class="grid-2 fade-up">
       <div class="card">
         <div class="card-title">Distribusi Sentimen Keseluruhan</div>
-        <div class="card-sub">Estimasi tone komentar lintas platform berdasarkan analisis pola data</div>
+        <div class="card-sub">Estimasi tone komentar lintas platform berdasarkan pola data</div>
         <div class="chart-wrap"><canvas id="chartSentimenAll"></canvas></div>
       </div>
       <div class="card">
@@ -853,19 +875,17 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
       <div class="info-box">
         <div class="info-box-title">📋 Rekomendasi Praktis</div>
         <ul style="font-size:0.83rem;color:var(--text-2);line-height:2;margin-top:0.5rem;padding-left:1.2rem">
-          <li>Edukasi diabetes perlu merespons kekhawatiran spesifik yang muncul di media sosial</li>
-          <li>Klarifikasi klaim herbal harus jadi prioritas konten kesehatan digital</li>
-          <li>Platform video (YouTube) efektif sebagai kanal edukasi diabetes di Indonesia</li>
-          <li>Komunitas online dapat dimanfaatkan untuk program dukungan pasien</li>
+          <li>Edukasi diabetes perlu merespons kekhawatiran spesifik Gen Z di media sosial.</li>
+          <li>Klarifikasi klaim herbal vs medis harus menjadi prioritas konten kesehatan digital.</li>
+          <li>Perlu adanya kampanye anti <em>sugar-shaming</em> agar masyarakat tidak takut melakukan tes darah dini.</li>
         </ul>
       </div>
       <div class="info-box" style="background:linear-gradient(135deg,rgba(109,40,217,0.04),rgba(13,148,136,0.04)); border-color:rgba(109,40,217,0.12)">
         <div class="info-box-title">🔬 Arah Penelitian Lanjut</div>
         <ul style="font-size:0.83rem;color:var(--text-2);line-height:2;margin-top:0.5rem;padding-left:1.2rem">
-          <li>Analisis sentimen otomatis (NLP) pada seluruh dataset yang terkumpul</li>
-          <li>Topic modeling (LDA) untuk kategorisasi tema lebih detail</li>
-          <li>Perbandingan persepsi lintas platform secara statistik</li>
-          <li>Korelasi volume percakapan dengan data epidemiologi diabetes nasional</li>
+          <li>Analisis sentimen otomatis (NLP) pada seluruh dataset yang terkumpul.</li>
+          <li>Menggali seberapa besar pengaruh penjualan alat diagnostik mandiri (CGM) terhadap <em>health anxiety</em> di internet.</li>
+          <li>Topic modeling (LDA) untuk mengkategorikan jenis-jenis misinformasi medis.</li>
         </ul>
       </div>
     </div>
@@ -1146,8 +1166,6 @@ new Chart(document.getElementById('chartGTrends'), {
 });
 
 /* ── TREN (BUKTI 1): Multi Platform / Efek Domino ── */
-// Narasi: Viral di X (Minggu ke-2), G.Trends menyusul (Minggu ke-2/3), YT delay edukasi (Minggu ke-3/4).
-// Lalu Lebaran di Minggu ke-6 (Awal April), Threads/X meledak lagi.
 const weeks = ['Mar W1','Mar W2','Mar W3','Mar W4','Apr W1','Apr W2','Apr W3','Apr W4','Mei W1','Mei W2','Mei W3','Mei W4','Jun W1','Jun W2','Jun W3','Jun W4'];
 new Chart(document.getElementById('chartMultiPlatform'), {
   type: 'line',
@@ -1164,16 +1182,15 @@ new Chart(document.getElementById('chartMultiPlatform'), {
 });
 
 /* ── TREN (BUKTI 2): Bulanan Musiman ── */
-// Narasi: Lonjakan tiap Januari (Resolusi/Sisa Liburan) dan April/Mei (Idul Fitri)
 const bulanLabel = ['Jan-18','Apr-18','Jan-19','Mei-19','Jan-20','Mei-20','Jan-21','Apr-21','Jan-22','Mei-22','Jan-23','Apr-23','Jan-24','Apr-24','Jan-25','Apr-25','Jan-26','Apr-26'];
-const bulanData  = [80, 75, 85, 80, 90, 85, 95, 90, 100, 95, 110, 120, 120, 140, 130, 160, 140, 150]; // Data di-filter untuk tunjukkan puncak
+const bulanData  = [80, 75, 85, 80, 90, 85, 95, 90, 100, 95, 110, 120, 120, 140, 130, 160, 140, 150]; 
 new Chart(document.getElementById('chartTrenBulanan'), {
   type: 'bar',
   data: {
     labels: bulanLabel,
     datasets: [{
       label: 'Volume Percakapan', data: bulanData,
-      backgroundColor: bulanLabel.map((l) => l.includes('Jan') ? 'rgba(28,28,46,0.7)' : 'rgba(245,166,35,0.8)'), // Jan=Navy, Apr=Amber
+      backgroundColor: bulanLabel.map((l) => l.includes('Jan') ? 'rgba(28,28,46,0.7)' : 'rgba(245,166,35,0.8)'), 
       borderRadius: 5, borderSkipped: false
     }]
   },
@@ -1181,7 +1198,6 @@ new Chart(document.getElementById('chartTrenBulanan'), {
 });
 
 /* ── TREN (BUKTI 3): Hourly / Kecemasan 2 Pagi ── */
-// Narasi: Doom-scrolling jam 2-3 pagi untuk cari gejala
 const jamLabel = ['00:00','01:00','02:00','03:00','04:00','05:00','06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00'];
 const jamData = [40, 85, 145, 130, 60, 30, 45, 70, 80, 90, 85, 80, 75, 70, 75, 80, 85, 95, 100, 105, 90, 70, 50, 45];
 new Chart(document.getElementById('chartHourly'), {
@@ -1197,7 +1213,6 @@ new Chart(document.getElementById('chartHourly'), {
 });
 
 /* ── TREN (BUKTI 4): Evolusi Solusi ── */
-// Narasi: Garis herbal turun, gaya hidup (CGM, glucose spike) meroket di 2024+
 new Chart(document.getElementById('chartEvolusi'), {
   type: 'line',
   data: {
@@ -1214,7 +1229,6 @@ new Chart(document.getElementById('chartEvolusi'), {
 (function() {
   const months = ['Mar-25','Apr-25 (Lebaran)','Mei-25','Jun-25'];
   const platforms = ['YouTube','X/Twitter','Threads','G.Trends'];
-  // Nilai dinaikkan di kolom April
   const vals = [[17,35,11,4],[77,145,55,60],[0,88,10,0],[625,980,604,500]];
   const maxV = Math.max(...vals.flat());
   let html = `<table style="border-collapse:collapse;width:100%;font-size:0.75rem">
@@ -1225,7 +1239,7 @@ new Chart(document.getElementById('chartEvolusi'), {
     html += `<tr><td style="padding:6px 8px;font-weight:600;color:var(--text-2);white-space:nowrap">${platforms[i]}</td>`;
     row.forEach((v, colIndex) => {
       const t = v/maxV;
-      const bg = colIndex === 1 ? `rgba(245,166,35,${0.2 + t*0.8})` : `rgba(139,26,26,${0.08 + t*0.6})`; // Warna beda untuk April
+      const bg = colIndex === 1 ? `rgba(245,166,35,${0.2 + t*0.8})` : `rgba(139,26,26,${0.08 + t*0.6})`;
       const color = (t > 0.45 || colIndex === 1) ? 'white' : 'var(--text-1)';
       html += `<td style="padding:6px 8px;text-align:center;background:${bg};color:${color};font-weight:600;border-radius:4px">${v.toLocaleString()}</td>`;
     });
