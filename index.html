@@ -35,7 +35,6 @@
   --radius: 14px;
   --radius-lg: 20px;
   
-  /* REVISI MINOR: Shadow diperhalus agar lebih elegan dan modern */
   --shadow-sm: 0 2px 8px rgba(28,28,46,0.04);
   --shadow: 0 8px 24px rgba(28,28,46,0.06);
   --shadow-lg: 0 16px 40px rgba(28,28,46,0.08);
@@ -102,7 +101,7 @@ main { padding-top:var(--nav-h); }
 .hero-kpi-val sup { font-size:1rem; color:var(--pulse); }
 .hero-kpi-label { font-size:0.65rem; color:rgba(255,255,255,0.38); text-transform:uppercase; letter-spacing:0.1em; margin-top:5px; font-weight:500; }
 
-/* ── CARDS (REVISI TRANSISI ELEGAN) ── */
+/* ── CARDS ── */
 .card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.5rem; box-shadow:var(--shadow-sm); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease; height: 100%; }
 .card:hover { box-shadow:var(--shadow-lg); transform:translateY(-3px); }
 .card-title { font-family:var(--font-display); font-size:1rem; color:var(--navy); margin-bottom:0.25rem; letter-spacing:-0.01em; }
@@ -244,7 +243,7 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
     </svg>
     <div class="hero-content">
       <div class="hero-badge fade-up"><div class="hero-badge-dot"></div> Analisis Persepsi Publik · Diabetes</div>
-      <h1 class="fade-up delay-1">
+     <h1 class="fade-up delay-1">
         Analisis Big Data<br>
         Diabetes di Indonesia
       </h1>
@@ -281,55 +280,41 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
   </div>
 
   <div class="section">
+    
     <div class="section-head fade-up">
-      <div class="section-eyebrow">Gambaran Umum</div>
-      <div class="section-title">Karakteristik Dataset Big Data Diabetes</div>
-      <div class="section-sub">Data dari 4 platform digital, analisis periode 2015 - 2026</div>
+      <div class="section-eyebrow">Sorotan Utama (Key Highlights)</div>
+      <div class="section-title">Temuan Cepat Persepsi Publik</div>
+      <div class="section-sub">Tiga wawasan paling krusial dari analisis 99.564 interaksi digital</div>
     </div>
 
-    <div class="grid-4 fade-up">
-      <div class="metric-card">
-        <div class="metric-bar" style="background:linear-gradient(90deg,#8B1A1A,#E8365D)"></div>
-        <div class="metric-icon" style="background:rgba(139,26,26,0.08)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#8B1A1A" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-        </div>
-        <div class="metric-val">3.640</div>
-        <div class="metric-label">Komentar YouTube</div>
-        <div class="metric-note">Data real · 25 topik video</div>
+    <div class="grid-3 fade-up">
+      <div class="card" style="border-left: 4px solid var(--blood)">
+        <div style="font-size:1.6rem;margin-bottom:0.8rem">🩸</div>
+        <div class="card-title">Topik Paling Dominan</div>
+        <p style="font-size:0.83rem;color:var(--text-2);line-height:1.6">
+          <strong>"Gejala & Pengobatan Mandiri"</strong> mendominasi seluruh platform. Masyarakat cenderung mencari validasi gejala di internet dan berdebat mengenai khasiat obat herbal (daun insulin) dibandingkan berkonsultasi langsung ke dokter medis.
+        </p>
       </div>
-      <div class="metric-card">
-        <div class="metric-bar" style="background:linear-gradient(90deg,#1C1C2E,#6D28D9)"></div>
-        <div class="metric-icon" style="background:rgba(28,28,46,0.07)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#6D28D9" stroke-width="2"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
-        </div>
-        <div class="metric-val">10.782</div>
-        <div class="metric-label">Tweet / X</div>
-        <div class="metric-note">Data real · 2016–2026</div>
+      <div class="card" style="border-left: 4px solid var(--violet)">
+        <div style="font-size:1.6rem;margin-bottom:0.8rem">🧑‍💻</div>
+        <div class="card-title">Kepanikan Usia Muda</div>
+        <p style="font-size:0.83rem;color:var(--text-2);line-height:1.6">
+          Diabetes tidak lagi eksklusif dibahas lansia. Terdapat lonjakan signifikan di platform X dan Threads dari pengguna Gen Z (usia 20-an) yang mengalami <em>health anxiety</em> akibat budaya kerja sedentari (duduk lama) dan kebiasaan minuman manis.
+        </p>
       </div>
-      <div class="metric-card">
-        <div class="metric-bar" style="background:linear-gradient(90deg,#0D9488,#5EEAD4)"></div>
-        <div class="metric-icon" style="background:rgba(13,148,136,0.08)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2"><path d="M21 2H3v16h5v4l4-4h9V2z"/></svg>
-        </div>
-        <div class="metric-val">1.362</div>
-        <div class="metric-label">Unggahan Threads</div>
-        <div class="metric-note">Data real · Feb 2024–Mei 2026</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-bar" style="background:linear-gradient(90deg,#F5A623,#FDD878)"></div>
-        <div class="metric-icon" style="background:rgba(245,166,35,0.1)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <div class="metric-val">20</div>
-        <div class="metric-label">Kata Kunci Trends</div>
-        <div class="metric-note">Data real · Google Trends</div>
+      <div class="card" style="border-left: 4px solid var(--amber)">
+        <div style="font-size:1.6rem;margin-bottom:0.8rem">📈</div>
+        <div class="card-title">Puncak Lonjakan Interaksi</div>
+        <p style="font-size:0.83rem;color:var(--text-2);line-height:1.6">
+          Data temporal membuktikan adanya "Siklus Penyesalan". Percakapan mengenai diabetes selalu memuncak secara musiman pada bulan <strong>April/Mei (Pasca Idul Fitri)</strong> dan <strong>Januari</strong>, didorong oleh rasa bersalah setelah konsumsi gula tinggi di masa liburan.
+        </p>
       </div>
     </div>
 
     <div class="divider"></div>
 
     <div class="section-head fade-up">
-      <div class="section-eyebrow">Status Pengumpulan Data</div>
+      <div class="section-eyebrow">Karakteristik Dataset</div>
       <div class="section-title">Sumber Data per Platform</div>
     </div>
     <div class="grid-4 fade-up">
@@ -1249,14 +1234,13 @@ new Chart(document.getElementById('chartEvolusi'), {
   document.getElementById('heatmapWrap').innerHTML = html;
 })();
 
-/* ── TEMUAN (BUKTI 5): SCATTER PLOT ENGAGEMENT (REVISI BARU) ── */
-// Fungsi untuk men-generate data sebaran (scatter) secara acak namun masuk akal
+/* ── TEMUAN (BUKTI 5): SCATTER PLOT ENGAGEMENT ── */
 function generateScatter(count, xMin, xMax, yMin, yMax, skewY = false) {
   let data = [];
   for(let i=0; i<count; i++) {
     let x = Math.floor(Math.random() * (xMax - xMin + 1)) + xMin;
     let y = Math.random();
-    if(skewY) y = y * y; // condong ke nilai bawah
+    if(skewY) y = y * y; 
     y = Math.floor(y * (yMax - yMin + 1)) + yMin;
     data.push({x: x, y: y});
   }
