@@ -65,10 +65,10 @@ nav { position:fixed; top:0; left:0; right:0; z-index:1000; height:var(--nav-h);
 .nav-link.active { background:rgba(139,26,26,0.1); color:var(--blood); font-weight:600; }
 .nav-badge { margin-left:auto; background:linear-gradient(135deg, var(--blood), var(--pulse)); color:white; font-size:0.65rem; padding:4px 11px; border-radius:20px; font-weight:700; letter-spacing:0.06em; flex-shrink:0; box-shadow:0 4px 12px rgba(139,26,26,0.3); }
 
-/* ── LAYOUT ── */
+/* ── LAYOUT (PEMBARUAN BUG OVERLAP) ── */
 main { padding-top:var(--nav-h); }
-.page { display:none; }
-.page.active { display:block; animation: fadePage 0.4s ease-out forwards; }
+.page { display:none !important; }
+.page.active { display:block !important; animation: fadePage 0.4s ease-out forwards; }
 @keyframes fadePage { from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:translateY(0)} }
 
 .section { max-width:1280px; margin:0 auto; padding:3.5rem 2.5rem; }
@@ -151,6 +151,14 @@ main { padding-top:var(--nav-h); }
 .topic-tag { display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--surface-2); border:1px solid var(--border); border-radius:20px; font-size:0.75rem; color:var(--text-2); font-weight:500; margin:3px; }
 .topic-dot { width:8px; height:8px; border-radius:50%; }
 
+/* ── PROGRESS BARS ── */
+.progress-row { margin-bottom: 0.8rem; }
+.progress-header { display: flex; justify-content: space-between; margin-bottom: 5px; }
+.progress-label { font-size: 0.78rem; font-weight: 500; color: var(--text-1); }
+.progress-val { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; }
+.progress-track { height: 6px; background: var(--surface-2); border-radius: 10px; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 10px; transition: width 1s ease-in-out; }
+
 /* ── CHART WRAPS ── */
 .chart-wrap { position:relative; width:100%; height:270px; }
 .chart-wrap-sm { height:180px; }
@@ -202,7 +210,7 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
 <body>
 
 <nav>
-  <a class="nav-logo" href="#" onclick="showPage('overview');return false">
+  <a class="nav-logo" href="#" onclick="showPage('overview', document.querySelector('.nav-link')); return false;">
     <div class="nav-logo-mark">
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M3 12h3l2-7 4 14 3-9 2 5 2-3h2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -215,11 +223,11 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
   </a>
   <div class="nav-divider"></div>
   <div class="nav-links">
-    <button class="nav-link active" onclick="showPage('overview')">Overview</button>
-    <button class="nav-link" onclick="showPage('8v')">8V Analysis</button>
-    <button class="nav-link" onclick="showPage('platform')">Platform Data</button>
-    <button class="nav-link" onclick="showPage('tren')">Tren Temporal</button>
-    <button class="nav-link" onclick="showPage('temuan')">Temuan</button>
+    <button class="nav-link active" onclick="showPage('overview', this)">Overview</button>
+    <button class="nav-link" onclick="showPage('8v', this)">8V Analysis</button>
+    <button class="nav-link" onclick="showPage('platform', this)">Platform Data</button>
+    <button class="nav-link" onclick="showPage('tren', this)">Tren Temporal</button>
+    <button class="nav-link" onclick="showPage('temuan', this)">Temuan</button>
   </div>
   <div class="nav-badge">Kelompok Mie Ayam</div>
 </nav>
@@ -246,6 +254,27 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
       percakapan, minat pencarian, serta persepsi masyarakat
       Indonesia terhadap diabetes pada periode 2015–2026.
     </p>
+      <div class="hero-kpis fade-up delay-3">
+        <div class="hero-kpi">
+          <div class="hero-kpi-val">99.564</div>
+          <div class="hero-kpi-label">Total Data Terkumpul</div>
+        </div>
+        <div class="hero-kpi">
+          <div class="hero-kpi-val">3.640</div>
+          <div class="hero-kpi-label">Komentar YouTube</div>
+        </div>
+        <div class="hero-kpi">
+          <div class="hero-kpi-val">10.782</div>
+          <div class="hero-kpi-label">Tweet / X</div>
+        </div>
+        <div class="hero-kpi">
+          <div class="hero-kpi-val">4</div>
+          <div class="hero-kpi-label">Platform Sumber</div>
+        </div>
+        <div class="hero-kpi">
+          <div class="hero-kpi-val">Mar–Jun</div>
+          <div class="hero-kpi-label">Rentang Waktu 2025</div>
+        </div>
       </div>
     </div>
   </div>
@@ -295,6 +324,7 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
           <div class="platform-name">YouTube</div>
           <div class="platform-count">3.640</div>
           <div class="platform-meta">komentar · 25 topik video</div>
+          <div style="margin-top:6px"><span class="badge badge-green"><span class="badge-dot"></span> Selesai</span></div>
         </div>
       </div>
       <div class="platform-card">
@@ -303,6 +333,7 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
           <div class="platform-name">X / Twitter</div>
           <div class="platform-count">10.782</div>
           <div class="platform-meta">tweet · 2016–2026</div>
+          <div style="margin-top:6px"><span class="badge badge-green"><span class="badge-dot"></span> Selesai</span></div>
         </div>
       </div>
       <div class="platform-card">
@@ -311,6 +342,7 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
           <div class="platform-name">Threads</div>
           <div class="platform-count">1.362</div>
           <div class="platform-meta">unggahan · Feb 2024–Mei 2026</div>
+          <div style="margin-top:6px"><span class="badge badge-green"><span class="badge-dot"></span> Selesai</span></div>
         </div>
       </div>
       <div class="platform-card">
@@ -319,6 +351,7 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
           <div class="platform-name">Google Trends</div>
           <div class="platform-count">83.780</div>
           <div class="platform-meta">data poin · 20 kata kunci</div>
+          <div style="margin-top:6px"><span class="badge badge-green"><span class="badge-dot"></span> Selesai</span></div>
         </div>
       </div>
     </div>
@@ -336,18 +369,11 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
         <div class="card-sub">Distribusi 99.564 baris data agregat dari 4 platform</div>
         <div class="chart-wrap"><canvas id="chartOverviewProporsi"></canvas></div>
       </div>
-      <div class="divider"></div>
-
-    <div class="section-head fade-up">
-      <div class="section-eyebrow">Distribusi Data</div>
-      <div class="section-title">Master Dataset Lintas Waktu</div>
-      <div class="section-sub">Tren volume pengumpulan data dari 4 platform (2015–2026)</div>
-    </div>
-    
-    <div class="card fade-up" style="margin-bottom:1.2rem">
-      <div class="card-title">Distribusi Time Series (2015–2026)</div>
-      <div class="card-sub">Volume baris data yang diekstraksi berdasarkan tahun publikasi/pencarian</div>
-      <div class="chart-wrap-lg"><canvas id="chartOverviewTimeSeries"></canvas></div>
+      <div class="card">
+        <div class="card-title">Data Pipeline / Funnel Eksekusi</div>
+        <div class="card-sub">Penyusutan volume data dari tahap mentah hingga dataset bersih</div>
+        <div class="chart-wrap"><canvas id="chartDataFunnel"></canvas></div>
+      </div>
     </div>
 
     <div class="info-box fade-up" style="margin-top:2rem">
@@ -518,7 +544,7 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
       </div>
       <div class="card" style="display:flex;flex-direction:column;gap:0.5rem">
         <div class="card-title">Ringkasan Skor per Dimensi</div>
-        <div class="card-sub">Progres pengumpulan dan analisis data</div>
+        <div class="card-sub">Progres pengumpulan dan analisis data 8V</div>
         
         <div id="progress8v" style="margin-top:0.5rem">
           <div class="progress-row">
@@ -928,12 +954,26 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
 </footer>
 
 <script>
-/* ── NAV ── */
-function showPage(id) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+/* ── NAV (LOGIKA DIKUATKAN) ── */
+function showPage(id, el) {
+  // 1. Sembunyikan semua halaman dengan kuat
+  document.querySelectorAll('.page').forEach(p => {
+    p.classList.remove('active');
+    p.style.display = 'none'; 
+  });
   document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-  document.getElementById('page-' + id).classList.add('active');
-  event.target.classList.add('active');
+  
+  // 2. Munculkan hanya halaman yang dituju
+  const targetPage = document.getElementById('page-' + id);
+  if (targetPage) {
+    targetPage.classList.add('active');
+    targetPage.style.display = 'block';
+  }
+  
+  // 3. Beri highlight pada tombol menu
+  if (el && el.classList) {
+    el.classList.add('active');
+  }
   window.scrollTo({top:0, behavior:'smooth'});
 }
 
