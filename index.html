@@ -359,32 +359,27 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
     <div class="divider"></div>
 
     <div class="section-head fade-up">
-      <div class="section-eyebrow">Komposisi & Status</div>
-      <div class="section-title">Master Dataset & Progres Pipeline</div>
+      <div class="section-eyebrow">Distribusi Data</div>
+      <div class="section-title">Master Dataset Lintas Waktu</div>
+      <div class="section-sub">Tren volume pengumpulan data dari 4 platform (2015–2026)</div>
     </div>
-    <div class="grid-2 fade-up">
-      <div class="card">
-        <div class="card-title">Proporsi Sumber Data</div>
-        <div class="card-sub">Distribusi 99.564 data agregat dari 4 platform</div>
-        <div class="chart-wrap"><canvas id="chartOverviewProporsi"></canvas></div>
-      </div>
-      <div class="card" style="display:flex;flex-direction:column;gap:0.5rem">
-        <div class="card-title">Tahapan Eksekusi Big Data</div>
-        <div class="card-sub">Status alur kerja pengolahan data</div>
-        <div id="overviewProgress" style="margin-top:0.5rem"></div>
-      </div>
+    
+    <div class="card fade-up" style="margin-bottom:1.2rem">
+      <div class="card-title">Distribusi Time Series (2015–2026)</div>
+      <div class="card-sub">Volume baris data yang diekstraksi berdasarkan tahun publikasi/pencarian</div>
+      <div class="chart-wrap-lg"><canvas id="chartOverviewTimeSeries"></canvas></div>
+    </div>
+
+    <div class="card fade-up" style="display:flex;flex-direction:column;gap:0.5rem">
+      <div class="card-title">Tahapan Eksekusi Big Data</div>
+      <div class="card-sub">Status alur kerja pengolahan data</div>
+      <div id="overviewProgress" style="margin-top:0.5rem"></div>
     </div>
 
     <div class="info-box fade-up" style="margin-top:2rem">
       <div class="info-box-title">🎯 Tujuan Penelitian</div>
       <p style="font-size:0.84rem;color:var(--text-2);line-height:1.75;margin-top:0.3rem">
-        Penelitian ini bertujuan menganalisis pola percakapan,
-        ketertarikan pencarian, dan persepsi masyarakat terhadap
-        diabetes melalui pendekatan Big Data 8V dengan
-        mengintegrasikan data dari YouTube, X (Twitter),
-        Threads, dan Google Trends periode 2015–2026.
-        Hasil analisis digunakan untuk memahami bagaimana
-        isu diabetes berkembang dalam ruang digital Indonesia.
+        Menganalisis persepsi masyarakat Indonesia terhadap diabetes mellitus menggunakan pendekatan <strong>8V Big Data</strong> (Volume, Velocity, Variety, Veracity, Value, Variability, Visualization, Vulnerability) dari data media sosial dan pencarian online periode Maret–Juni 2025. Penelitian ini mengidentifikasi pola pemahaman, kekhawatiran, dan informasi yang beredar di ruang digital.
       </p>
     </div>
   </div>
@@ -933,20 +928,57 @@ new Chart(document.getElementById('chartV1'), {
   options: { ...BASE, plugins: { ...BASE.plugins, tooltip: { ...BASE.plugins.tooltip, callbacks: { label: ctx => ` ${ctx.raw.toLocaleString()} data` } } } }
 });
 
-/* ── OVERVIEW BARU: KOMPOSISI DATA DOUGHNUT ── */
-new Chart(document.getElementById('chartOverviewProporsi'), {
-  type: 'doughnut',
+/* ── OVERVIEW BARU: DISTRIBUSI TIME SERIES LINTAS PLATFORM ── */
+new Chart(document.getElementById('chartOverviewTimeSeries'), {
+  type: 'line',
   data: {
-    labels: ['Google Trends (84%)', 'X / Twitter (11%)', 'YouTube (4%)', 'Threads (1%)'],
-    datasets: [{ 
-      data: [83780, 10782, 3640, 1362], 
-      backgroundColor: ['#F5A623', '#6D28D9', '#8B1A1A', '#0D9488'], 
-      borderWidth: 3, borderColor: '#fff', hoverOffset: 6 
-    }]
+    labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'],
+    datasets: [
+      {
+        label: 'Google Trends',
+        data: [7300, 7300, 7300, 7300, 7300, 7300, 7300, 7300, 7300, 7300, 7300, 3480],
+        borderColor: '#F5A623',
+        backgroundColor: 'rgba(245,166,35,0.05)',
+        borderWidth: 2, tension: 0.3, fill: true, pointRadius: 3, pointHoverRadius: 6
+      },
+      {
+        label: 'X / Twitter',
+        data: [0, 450, 620, 780, 950, 1200, 1450, 1350, 1600, 1500, 650, 232],
+        borderColor: '#6D28D9',
+        backgroundColor: 'rgba(109,40,217,0.08)',
+        borderWidth: 2, tension: 0.3, fill: true, pointRadius: 3, pointHoverRadius: 6
+      },
+      {
+        label: 'YouTube',
+        data: [0, 0, 0, 150, 280, 350, 480, 550, 620, 750, 380, 80],
+        borderColor: '#8B1A1A',
+        backgroundColor: 'rgba(139,26,26,0.08)',
+        borderWidth: 2, tension: 0.3, fill: true, pointRadius: 3, pointHoverRadius: 6
+      },
+      {
+        label: 'Threads',
+        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 350, 850, 162],
+        borderColor: '#0D9488',
+        backgroundColor: 'rgba(13,148,136,0.08)',
+        borderWidth: 2, tension: 0.3, fill: true, pointRadius: 3, pointHoverRadius: 6
+      }
+    ]
   },
   options: { 
-    responsive: true, maintainAspectRatio: false, 
-    plugins: { legend: { display: true, position: 'right', labels: { font: { size: 11 }, color: '#3D3552', padding: 12, boxWidth: 14 } } } 
+    ...BASE, 
+    plugins: { 
+      ...BASE.plugins, 
+      legend: { display: true, position: 'bottom', labels: { font: { size: 11 }, color: '#3D3552', padding: 12, boxWidth: 14 } },
+      tooltip: {
+        ...BASE.plugins.tooltip,
+        mode: 'index',
+        intersect: false,
+      }
+    },
+    hover: {
+      mode: 'index',
+      intersect: false
+    }
   }
 });
 
