@@ -336,11 +336,18 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
         <div class="card-sub">Distribusi 99.564 baris data agregat dari 4 platform</div>
         <div class="chart-wrap"><canvas id="chartOverviewProporsi"></canvas></div>
       </div>
-      <div class="card">
-        <div class="card-title">Data Pipeline / Funnel Eksekusi</div>
-        <div class="card-sub">Penyusutan volume data dari tahap mentah hingga dataset bersih</div>
-        <div class="chart-wrap"><canvas id="chartDataFunnel"></canvas></div>
-      </div>
+      <div class="divider"></div>
+
+    <div class="section-head fade-up">
+      <div class="section-eyebrow">Distribusi Data</div>
+      <div class="section-title">Master Dataset Lintas Waktu</div>
+      <div class="section-sub">Tren volume pengumpulan data dari 4 platform (2015–2026)</div>
+    </div>
+    
+    <div class="card fade-up" style="margin-bottom:1.2rem">
+      <div class="card-title">Distribusi Time Series (2015–2026)</div>
+      <div class="card-sub">Volume baris data yang diekstraksi berdasarkan tahun publikasi/pencarian</div>
+      <div class="chart-wrap-lg"><canvas id="chartOverviewTimeSeries"></canvas></div>
     </div>
 
     <div class="info-box fade-up" style="margin-top:2rem">
