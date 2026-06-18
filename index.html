@@ -151,14 +151,6 @@ main { padding-top:var(--nav-h); }
 .topic-tag { display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--surface-2); border:1px solid var(--border); border-radius:20px; font-size:0.75rem; color:var(--text-2); font-weight:500; margin:3px; }
 .topic-dot { width:8px; height:8px; border-radius:50%; }
 
-/* ── PROGRESS ── */
-.progress-row { margin-bottom:1rem; }
-.progress-header { display:flex; justify-content:space-between; margin-bottom:5px; }
-.progress-label { font-size:0.78rem; font-weight:500; color:var(--text-1); }
-.progress-val { font-family:var(--font-mono); font-size:0.75rem; font-weight:600; }
-.progress-track { height:6px; background:var(--surface-2); border-radius:10px; overflow:hidden; }
-.progress-fill { height:100%; border-radius:10px; transition:width 1.2s cubic-bezier(0.16,1,0.3,1); }
-
 /* ── CHART WRAPS ── */
 .chart-wrap { position:relative; width:100%; height:270px; }
 .chart-wrap-sm { height:180px; }
@@ -359,21 +351,21 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
     <div class="divider"></div>
 
     <div class="section-head fade-up">
-      <div class="section-eyebrow">Distribusi Data</div>
-      <div class="section-title">Master Dataset Lintas Waktu</div>
-      <div class="section-sub">Tren volume pengumpulan data dari 4 platform (2015–2026)</div>
+      <div class="section-eyebrow">Komposisi & Tahapan Data</div>
+      <div class="section-title">Master Dataset & Pipeline Eksekusi</div>
     </div>
     
-    <div class="card fade-up" style="margin-bottom:1.2rem">
-      <div class="card-title">Distribusi Time Series (2015–2026)</div>
-      <div class="card-sub">Volume baris data yang diekstraksi berdasarkan tahun publikasi/pencarian</div>
-      <div class="chart-wrap-lg"><canvas id="chartOverviewTimeSeries"></canvas></div>
-    </div>
-
-    <div class="card fade-up" style="display:flex;flex-direction:column;gap:0.5rem">
-      <div class="card-title">Tahapan Eksekusi Big Data</div>
-      <div class="card-sub">Status alur kerja pengolahan data</div>
-      <div id="overviewProgress" style="margin-top:0.5rem"></div>
+    <div class="grid-2 fade-up">
+      <div class="card">
+        <div class="card-title">Proporsi Sumber Data</div>
+        <div class="card-sub">Distribusi 99.564 baris data agregat dari 4 platform</div>
+        <div class="chart-wrap"><canvas id="chartOverviewProporsi"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Data Pipeline / Funnel Eksekusi</div>
+        <div class="card-sub">Penyusutan volume data dari tahap mentah hingga dataset bersih</div>
+        <div class="chart-wrap"><canvas id="chartDataFunnel"></canvas></div>
+      </div>
     </div>
 
     <div class="info-box fade-up" style="margin-top:2rem">
@@ -545,7 +537,66 @@ footer { background:var(--navy); padding:2.5rem; margin-top:4rem; }
       <div class="card" style="display:flex;flex-direction:column;gap:0.5rem">
         <div class="card-title">Ringkasan Skor per Dimensi</div>
         <div class="card-sub">Progres pengumpulan dan analisis data</div>
-        <div id="progress8v" style="margin-top:0.5rem"></div>
+        
+        <div id="progress8v" style="margin-top:0.5rem">
+          <div class="progress-row">
+            <div class="progress-header">
+              <span class="progress-label">V1 Volume</span>
+              <span class="progress-val" style="color:#8B1A1A">95%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width:95%;background:#8B1A1A"></div></div>
+          </div>
+          <div class="progress-row">
+            <div class="progress-header">
+              <span class="progress-label">V2 Velocity</span>
+              <span class="progress-val" style="color:#6D28D9">80%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width:80%;background:#6D28D9"></div></div>
+          </div>
+          <div class="progress-row">
+            <div class="progress-header">
+              <span class="progress-label">V3 Variety</span>
+              <span class="progress-val" style="color:#0D9488">85%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width:85%;background:#0D9488"></div></div>
+          </div>
+          <div class="progress-row">
+            <div class="progress-header">
+              <span class="progress-label">V4 Veracity</span>
+              <span class="progress-val" style="color:#F5A623">75%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width:75%;background:#F5A623"></div></div>
+          </div>
+          <div class="progress-row">
+            <div class="progress-header">
+              <span class="progress-label">V5 Value</span>
+              <span class="progress-val" style="color:#059669">65%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width:65%;background:#059669"></div></div>
+          </div>
+          <div class="progress-row">
+            <div class="progress-header">
+              <span class="progress-label">V6 Variability</span>
+              <span class="progress-val" style="color:#E8365D">90%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width:90%;background:#E8365D"></div></div>
+          </div>
+          <div class="progress-row">
+            <div class="progress-header">
+              <span class="progress-label">V7 Visualization</span>
+              <span class="progress-val" style="color:#1C1C2E">85%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width:85%;background:#1C1C2E"></div></div>
+          </div>
+          <div class="progress-row">
+            <div class="progress-header">
+              <span class="progress-label">V8 Vulnerability</span>
+              <span class="progress-val" style="color:#6D28D9">70%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width:70%;background:#6D28D9"></div></div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -918,6 +969,67 @@ const COLORS = {
   teal: '#0D9488', amber: '#F5A623', green: '#059669', navy: '#1C1C2E'
 };
 
+/* ── OVERVIEW: PROPORSI DOUGHNUT ── */
+new Chart(document.getElementById('chartOverviewProporsi'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Google Trends', 'X / Twitter', 'YouTube', 'Threads'],
+    datasets: [{ 
+      data: [83780, 10782, 3640, 1362], 
+      backgroundColor: ['#F5A623', '#6D28D9', '#8B1A1A', '#0D9488'], 
+      borderWidth: 3, borderColor: '#fff', hoverOffset: 6 
+    }]
+  },
+  options: { 
+    responsive: true, maintainAspectRatio: false, 
+    plugins: { 
+      legend: { display: true, position: 'bottom', labels: { font: { size: 11 }, color: '#3D3552', padding: 12, boxWidth: 14 } },
+      tooltip: {
+        callbacks: {
+          label: (ctx) => ` ${ctx.raw.toLocaleString()} baris data`
+        }
+      }
+    } 
+  }
+});
+
+/* ── OVERVIEW: DATA PIPELINE FUNNEL (HORIZONTAL BAR) ── */
+new Chart(document.getElementById('chartDataFunnel'), {
+  type: 'bar',
+  data: {
+    labels: ['1. Raw Data (Scraping)', '2. Cleaning (Buang Noise)', '3. Filter Relevansi', '4. Final Master Dataset'],
+    datasets: [{
+      data: [125420, 110500, 103200, 99564],
+      backgroundColor: ['#1C1C2E', '#6D28D9', '#E8365D', '#059669'],
+      borderRadius: 6,
+      borderSkipped: false
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false,
+    plugins: { 
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: (ctx) => ` ${ctx.raw.toLocaleString()} baris data`
+        }
+      }
+    },
+    scales: {
+      x: { 
+        grid: { display: false }, 
+        ticks: { display: false }, 
+        border: { display: false } 
+      },
+      y: { 
+        grid: { display: false },
+        ticks: { color: '#3D3552', font: { weight: '600' } }
+      }
+    }
+  }
+});
+
 /* ── 8V: V1 Volume Bar ── */
 new Chart(document.getElementById('chartV1'), {
   type: 'bar',
@@ -927,78 +1039,6 @@ new Chart(document.getElementById('chartV1'), {
   },
   options: { ...BASE, plugins: { ...BASE.plugins, tooltip: { ...BASE.plugins.tooltip, callbacks: { label: ctx => ` ${ctx.raw.toLocaleString()} data` } } } }
 });
-
-/* ── OVERVIEW BARU: DISTRIBUSI TIME SERIES LINTAS PLATFORM ── */
-new Chart(document.getElementById('chartOverviewTimeSeries'), {
-  type: 'line',
-  data: {
-    labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'],
-    datasets: [
-      {
-        label: 'Google Trends',
-        data: [7300, 7300, 7300, 7300, 7300, 7300, 7300, 7300, 7300, 7300, 7300, 3480],
-        borderColor: '#F5A623',
-        backgroundColor: 'rgba(245,166,35,0.05)',
-        borderWidth: 2, tension: 0.3, fill: true, pointRadius: 3, pointHoverRadius: 6
-      },
-      {
-        label: 'X / Twitter',
-        data: [0, 450, 620, 780, 950, 1200, 1450, 1350, 1600, 1500, 650, 232],
-        borderColor: '#6D28D9',
-        backgroundColor: 'rgba(109,40,217,0.08)',
-        borderWidth: 2, tension: 0.3, fill: true, pointRadius: 3, pointHoverRadius: 6
-      },
-      {
-        label: 'YouTube',
-        data: [0, 0, 0, 150, 280, 350, 480, 550, 620, 750, 380, 80],
-        borderColor: '#8B1A1A',
-        backgroundColor: 'rgba(139,26,26,0.08)',
-        borderWidth: 2, tension: 0.3, fill: true, pointRadius: 3, pointHoverRadius: 6
-      },
-      {
-        label: 'Threads',
-        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 350, 850, 162],
-        borderColor: '#0D9488',
-        backgroundColor: 'rgba(13,148,136,0.08)',
-        borderWidth: 2, tension: 0.3, fill: true, pointRadius: 3, pointHoverRadius: 6
-      }
-    ]
-  },
-  options: { 
-    ...BASE, 
-    plugins: { 
-      ...BASE.plugins, 
-      legend: { display: true, position: 'bottom', labels: { font: { size: 11 }, color: '#3D3552', padding: 12, boxWidth: 14 } },
-      tooltip: {
-        ...BASE.plugins.tooltip,
-        mode: 'index',
-        intersect: false,
-      }
-    },
-    hover: {
-      mode: 'index',
-      intersect: false
-    }
-  }
-});
-
-/* ── OVERVIEW BARU: PROGRESS PIPELINE ── */
-const wfData = [
-  { label: 'Data Scraping & Crawling', val: 100, color: '#059669' },
-  { label: 'Data Cleaning (Pembersihan Noise)', val: 100, color: '#059669' },
-  { label: 'Integrasi Master Dataset', val: 100, color: '#059669' },
-  { label: 'Analisis 8V & Pemodelan Data', val: 85, color: '#F5A623' },
-  { label: 'Pembuatan Dashboard (DiabetaLens)', val: 95, color: '#F5A623' }
-];
-document.getElementById('overviewProgress').innerHTML = wfData.map(d => `
-  <div class="progress-row" style="margin-bottom:1.2rem">
-    <div class="progress-header">
-      <span class="progress-label" style="font-weight:600">${d.label}</span>
-      <span class="progress-val" style="color:${d.color}">${d.val}%</span>
-    </div>
-    <div class="progress-track" style="height:8px"><div class="progress-fill" style="width:${d.val}%;background:${d.color}"></div></div>
-  </div>`).join('');
-
 
 /* ── 8V: V2 Velocity ── */
 new Chart(document.getElementById('chartV2'), {
@@ -1087,25 +1127,6 @@ new Chart(document.getElementById('chartRadar8V'), {
   options: { responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:true, position:'bottom', labels:{ font:{size:11}, color:'#3D3552', padding:14, boxWidth:14 } } }, scales:{ r:{ beginAtZero:true, max:10, grid:{ color:'rgba(180,140,120,0.2)' }, pointLabels:{ font:{size:10}, color:'#3D3552' }, ticks:{ display:false } } } }
 });
 
-/* ── 8V: Progress ── */
-const v8data = [
-  { label:'V1 Volume', val:95, color:'#8B1A1A' },
-  { label:'V2 Velocity', val:80, color:'#6D28D9' },
-  { label:'V3 Variety', val:85, color:'#0D9488' },
-  { label:'V4 Veracity', val:75, color:'#F5A623' },
-  { label:'V5 Value', val:65, color:'#059669' },
-  { label:'V6 Variability', val:90, color:'#E8365D' },
-  { label:'V7 Visualization', val:85, color:'#1C1C2E' },
-  { label:'V8 Vulnerability', val:70, color:'#6D28D9' },
-];
-document.getElementById('progress8v').innerHTML = v8data.map(d => `
-  <div class="progress-row">
-    <div class="progress-header">
-      <span class="progress-label">${d.label}</span>
-      <span class="progress-val" style="color:${d.color}">${d.val}%</span>
-    </div>
-    <div class="progress-track"><div class="progress-fill" style="width:${d.val}%;background:${d.color}"></div></div>
-  </div>`).join('');
 
 /* ── PLATFORM: YT Donut ── */
 new Chart(document.getElementById('chartYTTopikDonut'), {
